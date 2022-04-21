@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste Annonce Admin!{% endblock %}
+
+{% block body %}
+    <a href="{{ path ('app_ajouter')}}"><button class="btn btn-primary">Ajouter une annonce</button></a>
+    <div class="table table-borderd">
+        <table>
+            <thead>
+                <th>Categorie</th>
+                <th>Supprimer</th>
+            </thead>
+            <tbody>
+             
+                    {% for liste_annonce in liste_annonce %}
+                    <tr>
+                    <td>{{ liste_annonce.categorie}}</td>
+                    <td><a href="{{path ('app_supprimer' ,{id:liste_annonce.id})}}"><button class="btn btn-primary">Supprimer</button></a></td>
+                    {% endfor %}
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

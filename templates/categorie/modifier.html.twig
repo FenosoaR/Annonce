@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier Categorie!{% endblock %}
+{% block body %}
+    {{form_start(form)}}
+        <div>
+            {{form_label(form.nom , 'Categorie Name: ')}}
+            {{form_widget(form.nom , { 'attr': {'class': "test form control" , 'value': data.nom} }) }}
+        </div>
+       
+
+    {{form_end(form)}}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste categorie Admin!{% endblock %}
+
+{% block body %}
+    <a href="{{ path ('categorie_ajouter')}}"><button class="btn btn-primary">Ajouter une categorie</button></a>
+    <div class="table table-borderd">
+        <table>
+            <thead>
+                <th>Nom</th>
+                <th>Supprimer</th>
+                <th>Modifier</th>
+            </thead>
+            <tbody>
+             
+                    {% for liste_categorie in liste_categorie %}
+                    <tr>
+                    <td>{{ liste_categorie.nom}}</td>
+                        <td><a href="{{ path ('categorie_supprimer' , {id:liste_categorie.id}) }}"><button class="btn btn-primary">Supprimer</button></a></td>
+                        <td><a href="{{ path ('categorie_modifier' , {id:liste_categorie.id}) }}"><button class="btn btn-primary">Modifier</button></a></td>
+                    {% endfor %}
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
